@@ -1,0 +1,191 @@
+/* all app scss styles here */
+
+
+/*navigation*/
+
+$menu-icon-size: 4rem;
+$menu-icon-color: black;
+$menu-link-height: 6.25rem;
+$menu-link-color: #fff;
+$menu-link-border: 1px solid rgba(255,255,255, .5);
+$call-color: #152737;
+
+.toggle-menu {
+  position:relative;
+  font-size: $menu-icon-size;
+  z-index: 5000;
+  color: $menu-icon-color;
+  top: -0.5rem;
+  left: 1.5rem;
+  transition: all 0.4s ease-in-out;
+  
+  &:hover {
+    transition: all 0.4s ease-in-out;
+    color: lighten($call-color, 10%);
+  }
+}
+
+.overlay-menu {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  margin:0;
+  padding: 9rem 0 0;
+  opacity: 1;
+  list-style: none;
+  background: black;
+  background-size: cover;
+  text-align: center;
+  transform: translateX(-100%) rotateX(40deg);
+  transition: all 400ms cubic-bezier(1.000, -0.400, 0.440, 0.985);
+  
+  li {
+    font-size: 2rem;
+    font-family: 'Merriweather', serif;
+  }
+  
+  a {
+    display: block;
+    color: $menu-link-color;
+    //font-weight: bold;
+
+    height: $menu-link-height;
+    line-height: 6.25rem;
+    border-bottom: $menu-link-border;
+    text-decoration: none;
+    
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+  }
+  
+  &.is-open ~ .toggle-menu {
+    display: inline-block;
+    transition: all 0.4s ease-in-out;
+    transform: rotate(135deg);
+    color: lighten($menu-icon-color, 100%);
+  }
+}
+
+.is-open {
+  top: 0;
+  opacity: .9;
+  transform: perspective(200px) translateX(0) rotateX(0);
+}
+/*end nav styles */
+
+/*home page styles */
+$call-color: #152737;
+.wrapper {
+	@include grid-row();
+	padding: 2em;
+
+
+}
+
+.hero {
+		@include grid-column(12);
+		border: solid 3px $menu-icon-color;
+		height: 300px;
+        color: $menu-icon-color;   
+        text-align: center;
+
+		h1 {
+		    margin-top: 1.5em;
+			color: $menu-icon-color;
+			font-family: 'Raleway', sans-serif;
+		}
+
+		h2 {
+			margin-top: 1.5em;
+			color: $menu-icon-color;
+			font-family: 'Merriweather', serif;
+
+			&:hover {
+				color: lighten($call-color, 10%);
+			}
+
+		}
+
+		h3 {
+	
+			color: $menu-icon-color;
+			font-family: 'Raleway', sans-serif;
+		}
+
+	}
+
+.call{
+	@include grid-column(12);
+	margin-top: -2em;
+	text-align: center;
+}
+
+.view-button {
+	color: $call-color;
+	background-color: white;
+	border:solid  $menu-icon-color 3px;
+	font-size: rem-calc(15);
+	font-family: 'Merriweather', serif;
+
+	&:hover {
+		background-color:lighten($call-color, 10%);
+		border-color: lighten($call-color, 10%);
+		color: white;
+	}
+
+	a {
+       text-decoration: none;
+       color: black;
+	}
+}
+
+
+
+.footer-menu {
+	@include grid-row();
+	//border: solid red 3px;
+	max-height: 8em;
+	margin-top: 24em;
+
+}
+
+.social {
+	@include grid-column(4);
+	//border: solid green 3px;
+	//text-align: center;
+
+}
+
+.email {
+	@include grid-column(8);
+	//border: solid blue 3px;
+	text-align: center;
+
+	p {
+		margin-top: 1.2em;
+		font-family: 'Merriweather', serif;
+		font-size: .9em;
+
+		&:hover {
+			color: lighten($call-color, 10%);
+		}
+
+	}
+
+}
+
+.fi-social-facebook {
+	font-size: 40px;
+	color: black;
+	margin-left: 1em;
+
+	&:hover {
+		color: lighten($call-color, 10%);
+		}
+	}
